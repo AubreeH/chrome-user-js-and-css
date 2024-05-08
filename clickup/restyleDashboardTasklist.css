@@ -1,0 +1,254 @@
+[data-user-js-and-css-toggle] cu-grid-dashboard cu-dashboard-table {
+	.cu-dashboard-table__body {
+		width: 100%;
+		
+		& > :last-child:has(.cu-dashboard-table__bottom-hint) {
+			display: none;
+		}
+		
+		&::after {
+			content: none;
+		}
+	}
+	
+	cu-task-list {
+		display: grid;
+		grid-template-columns: auto;	
+		grid-auto-columns: min-content;
+		column-gap: .5rem;
+		padding-inline: 12px;
+		width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+		--cu-task-row-column-min-width: unset !important;
+	}
+	
+	/* Hide first child of task list header */
+	cu-task-list-header > :first-child {
+		display: none;
+	}
+	
+	.cu-task-list-header__item_main::before,
+	.cu-task-list__header-border,
+	cu-task-list-footer,
+	cu-task-row-menu,
+	.cu-task-row__fading,
+	.cu-task-row__open-subtasks,
+	.cu-task-list-header-field__title-button
+	{
+		display: none;
+	}
+	
+	/* Break header fields into single components */
+	cu-task-list-header,
+	cu-task-list-header > :last-child,
+	cu-task-list-header > :last-child .cu-task-list-header__row,
+	.cu-task-list-header__row > .cu-task-list-header__item,
+	.cu-task-list-header__items {
+		display: contents;
+	}
+	
+	[data-test="task-list__rows"],
+	cu-task-row {
+		contain: inherit;
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-column: span var(--columns, 10);
+		justify-items: center;
+	}
+	
+	.fake-column {
+		width: 100%;
+		min-width: 0;
+		max-width: 0;
+	}
+	
+	.cu-dropdown__toggle,
+	cu-time-tracking-dropdown {
+		padding: 0;
+	}
+	
+	.cu-custom-fields__type-dropdown {
+		padding: 2px 0;
+	}
+	
+	.cu-custom-field-type-users__users {
+		margin: 0;
+	}
+	
+	.cu-task-row__cell {
+		width: 100%;
+		min-width: unset;
+	}
+	
+	.cu-task-row__main {
+		left: unset;
+		padding: 0;
+		width: 100%;
+		min-width: 0;
+		border-top: 0;
+		max-width: unset;
+	}
+	
+	.cu-task-row__out-viewport {
+		width: 100%;
+	}
+	
+	/* Break row fields into singular components */
+	.cu-task-row__container
+	/* cu-task-row:not(:has(.cu-task-row-placeholder)) */
+	{
+		display: contents;
+	}
+	
+	cu-task-list-header-field {
+		grid-row: 1;
+	}
+	
+	/* Normalise column header widths */
+	cu-task-list-header-field {
+		width: 100%;
+		min-width: 32px;
+	}
+	
+	/* Normalise gaps between headers */
+	.cu-task-list-header-field__title {
+		padding: 0;
+	}
+	
+	/* Hide task list selector */
+	button.cu-task-list-header__row-toggle,
+	.cu-task-row__toggle-container {
+		display: none;
+	}
+	
+	/* Hide header field resizer */
+	.cu-task-list-header__resizer {
+		display: none;
+	}
+	
+	/* Hide settings column */
+	cu-task-list-header-settings {
+		display: none;
+	}
+	
+	cu-task-row-assignee .cu-dropdown__toggle {
+		display: flex;
+		justify-content: center;
+	}
+	
+	cu-status-indicator {
+		padding-left: 4px;
+	}
+	
+	.cu-task-row__main .cu-task-row-main__link-text-inner {
+		overflow: auto !important;
+		text-overflow: unset !important;
+		scrollbar-width: none !important;
+		flex: 1;
+	}
+	
+	.cu-tags-select__badge {
+		border-radius: 13px;
+	}
+	
+	
+	
+	cu-task-time-estimates,
+	cu-priority-list-dropdown,
+	cu-task-row-custom-field.cu-task-row-custom-field_drop_down,
+	cu-task-row-custom-field.cu-task-row-custom-field_users,
+	cu-task-list-header-field[data-test='task-list-header_column__Pull Request'],
+	cu-task-list-header-field[data-test='task-list-header_column__QA'],
+	cu-task-list-header-field[data-test='task-list-header_column__Priority'],
+	cu-task-list-header-field[data-test='task-list-header_column__Time estimate'],
+	cu-task-list-header-field[data-test='task-list-header_column__Tester'] {
+		max-width: 50px !important;
+	}
+	
+	cu-task-list-columns-tracker {
+		display: flex;
+	}
+	
+	.cu-task-row-main__icon-button {
+		display: none;
+	}
+	
+	.cu-task-row__container:before, .cu-task-row__container:after {
+		content: unset;
+	}
+	
+	[data-test="task-list-header-field__Pull Request"] .cu-task-list-header-field__title-text,
+	[data-test="task-list-header-field__Date updated"] .cu-task-list-header-field__title-text,
+	[data-test="task-list-header-field__Custom Task ID"] .cu-task-list-header-field__title-text, 
+	[data-test="task-list-header-field__Time estimate"] .cu-task-list-header-field__title-text, 
+	[data-test="task-list-header-field__Time tracked"] .cu-task-list-header-field__title-text {
+		white-space: normal;
+		text-overflow: normal;
+		display: grid;
+    overflow: hidden;
+    grid-template-rows: auto 1fr;
+    width: min-content;
+    height: 1lh;
+    align-content: end;
+    justify-items: center;
+    word-break: break-all;
+    
+		&::after {
+			width: fit-content;
+			word-break: normal;
+			white-space: nowrap;
+		}
+	}
+	
+	[data-test="task-list-header-field__Pull Request"] .cu-task-list-header-field__title-text::after {
+		content: "PR";
+	}
+	
+	[data-test="task-list-header-field__Date updated"] .cu-task-list-header-field__title-text::after {
+		content: "Updated";
+	}
+	
+	[data-test="task-list-header-field__Custom Task ID"] .cu-task-list-header-field__title-text::after {
+		content: "Task ID";
+	}
+	
+	[data-test="task-list-header-field__Time estimate"] .cu-task-list-header-field__title-text::after {
+		content: "Estimate";
+	}
+	
+	[data-test="task-list-header-field__Time tracked"] .cu-task-list-header-field__title-text::after {
+		content: "Tracked";
+	}
+	
+	[data-test="task-row__id"] {
+		width: 100%;
+		padding: 4px;
+	}
+	
+	cu-task-row-custom-id {
+		width: 100%;
+	}
+	
+	cu-time-tracking-display {
+		display: none;
+	}
+	
+	cu-priority-list-dropdown cu3-icon {
+		margin-right: 0;
+	}
+	.cu-priorities-view__item {
+		justify-content: center;
+	}
+	
+	cu-task-row-time-tracker {
+		width: 100%;
+	}
+	.cu-time-tracking-dropdown__toggle {
+		justify-content: center;
+	}
+	
+	.due-date__info {
+		padding-inline: 4px;
+	}
+}

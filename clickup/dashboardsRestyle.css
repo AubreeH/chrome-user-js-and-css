@@ -1,0 +1,329 @@
+[data-user-js-and-css-toggle] {
+	.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+		pointer-events: none;
+	}
+	
+	cu-grid-dashboard {
+		.cu-grid-layout-item {
+			--toolbar-height: 32px !important;
+			--toolbar-row-height: 32px !important;
+		}
+	
+		.cu-grid-layout-item_time-reporting {
+			--toolbar-height: 80px !important;
+			--toolbar-row-height: 32px !important;
+		}
+	
+		.cu-dashboard-table__scroll {
+			scrollbar-width: none;
+		}
+		
+		.cu-task-row-main__actions {
+			display: none !important;
+		}
+	
+		.cu-task-row__open-subtasks {
+			display: none;
+		}
+	
+		.cu-priorities-view__item-label {
+			display: none !important;
+		}
+	
+		.cu-task-row-custom-id__copy {
+			display: none !important;
+		}
+	
+		.cu-time-estimates-view__icon {
+			display: none !important;
+		}
+	
+		.cu-time-estimates-view__clear {
+			display: none !important;
+		}
+	}
+	
+	.cu-task-row.cu-task-row_list-view-v3 .cu-task-row__main {
+		border-bottom: 0 !important;
+		padding-inline: 4px 4px !important;
+	}
+	
+	.cu-task-row.cu-task-row_list-view-v3 .cu-task-row__container:after {
+		background-color: transparent !important;
+	}
+	
+	cu-grid-dashboard cu-grid-layout.cu-grid-layout_view-mode {
+		cu-task-list-header-settings,
+		cu-task-row-menu {
+			display: none !important;
+		}
+	
+		/* Hide time tracked total and resize */
+		cu-task-row-time-tracker {
+			min-width: 0 !important;
+	
+			cu-time-tracking-dropdown {
+				padding: 0 !important;
+			}
+	
+			.cu-dropdown__toggle {
+				padding-inline: 8px !important;
+			}
+	
+			time-tracking-display {
+				display: none !important;
+			}
+	
+			.cu-task-info__time-tracking-container-arrow-down {
+				display: none;
+			}
+	
+			cu-time-tracker-timer {
+				pointer-events: none !important;
+			}
+		}
+	
+		/* .cu-task-list-header.cu-task-list-header_list-view-v3 .cu-task-list-header__items:has(cu-task-list-header-field[data-test="task-list-header_column__Time tracked"]) {
+		 	cu-task-list-header-field {
+		 		width: 32px !important;
+				height: 32px !important;
+				min-width: 0 !important;
+	
+				& > * {
+					display: none !important;
+				}
+			}
+		} */
+		
+		[data-test="dropdown__toggle"] {
+			margin-right: 0;
+		}
+	}
+	
+	/* Hide Sub-task dropdown button */
+	cu-grid-dashboard .cu-task-row__open-subtasks {
+		display: none !important;
+	}
+	
+	/* cu-task-list-dynamic-skeleton-loader {
+		display: none;
+	} */
+	
+	/* Decrease border radius on dashboard widgets */
+	cu-grid-dashboard .cu-grid-layout gridster-item {
+		border-radius: var(--cu-radii-2) !important;
+		& > cu-grid-layout-item {
+			border-radius: var(--cu-radii-2) !important;
+		}
+	}
+	
+	/* Centre task list column headers */
+	cu-grid-dashboard .cu-task-list-header-field__title {
+		justify-content: center !important;
+	}
+	
+	cu-grid-dashboard gridster.cu-grid-layout__gridster {
+		scrollbar-width: none !important;
+	
+		* {
+			--cu-background-main: #2e343a;
+		}
+	}
+	
+	cu-grid-dashboard .cu-task-list-header__row,
+	cu-grid-dashboard .cu-task-list-header-field__title {
+		height: fit-content !important;
+	}
+	
+	cu-grid-dashboard cu-task-list-header.cu-task-list-header {
+		padding-top: 8px !important;
+	}
+	
+	cu-grid-dashboard .cu-task-list-header-field__title-button {
+		display: none !important;
+	}
+	
+	cu-grid-dashboard gridster-item[data-item-name='time_sheet'] {
+		cu-grid-layout-item {
+			display: grid !important;
+			grid-template-rows: auto 1fr !important;
+		}
+	
+		[data-test='grid-layout-item__toolbar'] {
+			height: fit-content !important;
+			position: relative !important;
+		}
+	
+		.cu-grid-layout-item__content {
+			height: 100% !important;
+			position: unset !important;
+			overflow: auto;
+		}
+		.cu-grid-widget-time-sheet__header-total,
+		.cu-grid-widget-time-sheet__body-total {
+			min-width: unset !important;
+		}
+	
+		.cu-grid-widget-time-sheet__day {
+			justify-content: center;
+		}
+	
+		.cu-grid-widget-time-sheet__person {
+			min-width: 168px !important;
+			flex-grow: unset !important;
+		}
+	
+		.cu-grid-widget-time-sheet__person-name {
+			min-width: 140px !important;
+		}
+	
+		.cu-grid-layout-item__toolbar-row_reporting {
+			height: fit-content !important;
+	
+			& > :last-child {
+				display: none !important;
+			}
+		}
+	
+		.cu-grid-layout-item__item-range {
+			position: absolute !important;
+			bottom: 0 !important;
+			left: 50% !important;
+			transform: translate(-50%, 0) !important;
+			z-index: 2;
+		}
+	
+		.cu-grid-layout-item__toolbar-row {
+			position: relative !important;
+			z-index: 1 !important;
+		}
+	}
+	
+	cu-grid-dashboard cu-grid-widget-time-sheet {
+		scrollbar-width: none !important;
+	
+		display: grid !important;
+		grid-template-columns: 1fr repeat(9, auto) !important;
+		place-content: start !important;
+		align-items: center !important;
+		gap: 3px 0 !important;
+	
+		padding-inline: 12px !important;
+	
+		& > * {
+			display: contents !important;
+			:first-child {
+				grid-column: 1 !important;
+			}
+		}
+	
+		.cu-grid-widget-time-sheet__person-name
+			.cu-grid-widget-time-sheet__right-icon-arrow {
+			display: none !important;
+		}
+	
+		.cu-grid-widget-time-sheet__row > * {
+			padding: 4px 8px 4px 0 !important;
+			margin: 0 !important;
+			height: 100% !important;
+			
+			display: flex !important;
+			align-items: center !important;
+			
+			&:first-child {
+				padding-left: 8px !important;
+			}
+		}
+	
+		.cu-grid-widget-time-sheet__day {
+			.cu-grid-widget-time-sheet__box {
+				height: 12px !important;
+				border-radius: 4px !important;
+				overflow: clip !important;
+			}
+		}
+		
+		.cu-grid-widget-time-sheet__row {
+			&:nth-child(2) {
+				& > * {
+					height: 38px !important;
+				}
+			}
+			
+			& > :first-child {
+				border: 1px solid transparent !important;
+				border-right: 0 !important;
+			}
+			
+			& > :not(:first-child, :last-child) {
+				border-block: 1px solid transparent !important;
+			}
+			
+			& > :last-child {
+				border: 1px solid transparent !important;
+				border-left: 0 !important;
+			}
+		}
+	
+		.cu-grid-widget-time-sheet__row:has(*:hover) > * {
+			border-color: var(--cu-border-high-contrast) !important;
+		}
+		
+		.cu-grid-widget-time-sheet__header .cu-grid-widget-time-sheet__day {
+			margin-inline: 5px;
+		}
+		
+		.cu-grid-widget-time-sheet__day,
+		.cu-grid-widget-time-sheet__body-total {
+			font-size: 11px !important;
+		}
+	}
+	
+	
+	
+	cu-grid-dashboard .cu-task-list-header-field__title-sort-by-index {
+		display: none !important;
+	}
+	
+	cu-grid-dashboard cu-task-row-date-time {
+		justify-content: center !important;
+	}
+	
+	cu-grid-dashboard cu-task-list-columns-tracker {
+		padding-left: unset !important;
+	}
+
+	cu-grid-layout-item:has(span[data-test="grid-layout-item-breadcrumbs__hidden"]) {
+		
+		[data-test="grid-layout-item__toolbar"] {
+			display: none !important;
+		}
+		.cu-grid-layout-item__content {
+			top: 0 !important;
+			height: 100% !important;
+		}
+	}
+}
+
+[data-user-js-and-css-toggle] cu-grid-dashboard gridster {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	grid-auto-rows: calc((100% - 8px)/7 - 8px);
+	gap: 8px;
+	padding: 8px !important;
+	height: calc(100% - 16px);
+	
+	& > gridster-item {
+		height: unset !important;
+		width: unset !important;
+		transform: unset !important;
+		position: unset !important;
+		margin: 0 !important;
+		grid-column: var(--col-start) / var(--col-end);
+		grid-row: var(--row-start) / var(--row-end);
+		
+		&::after {
+			content: unset !important;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+[data-user-js-and-css-toggle] {
+	[data-date-transformed]:not([data-date-transformed="false"]) {
+		display: grid;
+    overflow: hidden;
+    grid-template-rows: auto 1fr;
+    width: min-content;
+    height: 1lh;
+    align-content: end;
+    word-break: break-all;
+    
+		&::after {
+			content: attr(data-date-transformed);
+			width: fit-content;
+			word-break: normal;
+		}
+	}
+}

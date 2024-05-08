@@ -1,0 +1,14 @@
+[data-user-js-and-css-toggle] {
+	cu-nav-favorites-bar {
+	  position: fixed !important;
+	  bottom: 0 !important;
+	  left: 0 !important;
+	  right: 0 !important;
+	  
+	  background: var(--cu-background-subtle) !important;
+	  
+		.cu-nav-favorites-bar__unpin-button {
+			margin-inline: 16px 8px !important;
+		}
+	}
+}
