@@ -1,5 +1,6 @@
 # chrome-user-js-and-css
 Setup with the [User JS and CSS Chrome Extension](https://chromewebstore.google.com/detail/user-javascript-and-css/nbhcbdghjpllgmfilhnhkllmkecfmpld) in mind.
+
 To use, import the export.json file into the above extension or copy the individual files into your chosen extension. Beware, some files depend on others which may not be supported in your chosen extension.
 
 
